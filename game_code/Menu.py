@@ -16,7 +16,7 @@ class Menu:
 
     def run(self):
         menu_option = 0
-        pygame.mixer.music.load('./asset/Menu.wav')
+        pygame.mixer.music.load('./asset/Menu.mp3')
         pygame.mixer.music.play(-1)
         while True:
             # DRAW IMAGES
