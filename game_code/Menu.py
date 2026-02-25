@@ -16,7 +16,7 @@ class Menu:
 
     def run(self):
         menu_option = 0
-        pygame.mixer.music.load('./asset/Menu.mp3')
+        pygame.mixer.music.load('./asset/Menu.wav')
         pygame.mixer.music.play(-1)
         while True:
             # DRAW IMAGES
@@ -24,7 +24,7 @@ class Menu:
             self.menu_text(50, "Mountain", C_ORANGE, ((WIN_WIDTH / 2), 70))
             self.menu_text(50, "Shooter", C_ORANGE, ((WIN_WIDTH / 2), 120))
 
-            for i in range(len(MENU_OPTION)):
+            for i in range(len(MENU_OPTION)): #color dos textos menu
                 if i == menu_option:
                     self.menu_text(20, MENU_OPTION[i], C_YELLOW, ((WIN_WIDTH / 2), 200 + 25 * i))
                 else:
@@ -37,14 +37,14 @@ class Menu:
                     pygame.quit()  # Close Window
                     quit()  # end pygame
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_DOWN:  # DOWN KEY
-                        if menu_option < len(MENU_OPTION) - 1:
-                            menu_option += 1
+                    if event.key == pygame.K_DOWN:  # DOWN KEY Tecla para baixo
+                        if menu_option < len(MENU_OPTION) - 1: #resetar voltar para primeira opcao
+                            menu_option += 1 #incrementar para descer opcao
                         else:
                             menu_option = 0
-                    if event.key == pygame.K_UP:  # UP KEY
+                    if event.key == pygame.K_UP:  # UP KEY tecla para cima
                         if menu_option > 0:
-                            menu_option -= 1
+                            menu_option -= 1 #decrementar para subir
                         else:
                             menu_option = len(MENU_OPTION) - 1
                     if event.key == pygame.K_RETURN:  # ENTER
